@@ -1,7 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './main.css';
 
 export default function Main() {
+
+  useEffect(() => {
+    const today = new Date()
+    const dayOfWeek = today.getDay() 
+    const sunday = new Date(today)
+
+    sunday.setDate(today.getDate() - dayOfWeek)
+
+    const week = []
+
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(sunday) 
+      d.setDate(sunday.getDate() + i)
+      week.push(d)
+    }
+
+    console.log(week)
+  }, [])
+
+
+
+
   return (
     <section className='main-section'>
       <div className="container">
@@ -25,9 +47,12 @@ export default function Main() {
             </div>
             <div className="calendar">
               <div className="div-date">
-                <span>Sun</span>
+                <span className='week-day'>Sun</span>
                 <div className="div-content">
-                  <span>4</span>
+                  <span className='div-content-header'>
+                    <button>+</button>
+                    <span>4</span>
+                  </span>
                   <div className='div-task'>
                     <div>Running</div>
                     <span>Any Time</span>

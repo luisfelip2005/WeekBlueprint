@@ -38,7 +38,7 @@ body {
     flex-direction: column;
 }
 
-.calendar .div-date span {
+.week-day {
     width: 100%;
     text-align: center;
 }
@@ -54,11 +54,25 @@ body {
 
 .calendar .div-date .div-content:hover {
     background-color: black;
+    transition: 2s;
 }
 
-.calendar .div-date div span {
+.div-content-header {
     width: 100%;
-    text-align: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 0px 7px;
+}
+
+.div-content-header button {
+    background-color: #252525;
+    color: #8B8883;
+    border: 3px solid #383836;
+    border-radius: 10px;
+    font-size: 22px;
+    padding: 0px 5px;
+    margin-left: -5px;
 }
 
 .div-task {
