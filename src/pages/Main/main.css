@@ -1,0 +1,85 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF;
+}
+
+body {
+    background-color: #191919;
+}
+
+.main-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-section .container {
+    width: 85%;
+}
+
+.header1, .header2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar {
+    display: flex;
+    align-items: stretch;
+    border: 2px solid red;
+}
+
+.calendar .div-date {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar .div-date span {
+    width: 100%;
+    text-align: center;
+}
+
+.calendar .div-date .div-content {
+    flex: 1;
+    padding: 5px 9px;
+    height: 100%;
+    border: 2px solid #2F2F2F;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar .div-date .div-content:hover {
+    background-color: black;
+}
+
+.calendar .div-date div span {
+    width: 100%;
+    text-align: end;
+}
+
+.div-task {
+    background-color: #2F2F2F;
+    border-radius: 10px;
+    padding: 7px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-bottom: 8px;
+}
+
+.div-task div {
+    padding: 0px;
+    display: flex;
+    font-weight: bolder;
+}
+
+.div-task span {
+    font-size: 13px;
+    text-align: start;
+    display: flex;
+}
