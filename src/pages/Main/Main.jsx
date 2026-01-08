@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './main.css';
 
 export default function Main() {
+  const [week, setWeek] = useState([])
 
   useEffect(() => {
     const today = new Date()
@@ -10,7 +11,7 @@ export default function Main() {
 
     sunday.setDate(today.getDate() - dayOfWeek)
 
-    const week = []
+    const weekArray = []
 
     for (let i = 0; i < 7; i++) {
       let d = new Date(sunday) 
@@ -22,10 +23,11 @@ export default function Main() {
       const day = d.slice(8, 10)
       const year = d.slice(11, 15)
 
-      week.push({day, dayOfWeek, month, year})
+      weekArray.push({day, dayOfWeek, month, year})
     }
 
-    console.log(week)
+    setWeek(weekArray)
+    console.log(weekArray)
   }, [])
 
   return (
@@ -50,81 +52,27 @@ export default function Main() {
               <span>Today</span>
             </div>
             <div className="calendar">
-              <div className="div-date">
-                <span className='week-day'>Sun</span>
-                <div className="div-content">
-                  <span className='div-content-header'>
-                    <button>+</button>
-                    <span>4</span>
-                  </span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
+              {week.map((date, index) => {
+                return (
+                  <div className="div-date">
+                    <span className='week-day'>{date.dayOfWeek}</span>
+                    <div className="div-content">
+                      <span className='div-content-header'>
+                        <button>+</button>
+                        <span>{date.day}</span>
+                      </span>
+                      <div className='div-task'>
+                        <div>Running</div>
+                        <span>Any Time</span>
+                      </div>
+                      <div className='div-task'>
+                        <div>Running</div>
+                        <span>Any Time</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div>
-              <div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div><div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div><div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div><div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div><div className="div-date">
-                <span>Sun</span>
-                <div className="div-content">
-                  <span>4</span>
-                  <div className='div-task'>
-                    <div>Running</div>
-                    <span>Any Time</span>
-                  </div>
-                </div>
-              </div>
-
+                )
+              })}
             </div>
           </div>
         </div>
