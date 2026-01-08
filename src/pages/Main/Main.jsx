@@ -3,6 +3,7 @@ import './main.css';
 
 export default function Main() {
   const [week, setWeek] = useState([])
+  const [indexHovered, setIndexHovered] = useState(null)
 
   useEffect(() => {
     const today = new Date()
@@ -54,11 +55,11 @@ export default function Main() {
             <div className="calendar">
               {week.map((date, index) => {
                 return (
-                  <div className="div-date">
+                  <div key={index} onMouseEnter={() => setIndexHovered(index)} onMouseLeave={() => setIndexHovered(null)} className="div-date">
                     <span className='week-day'>{date.dayOfWeek}</span>
                     <div className="div-content">
                       <span className='div-content-header'>
-                        <button>+</button>
+                        {indexHovered == index ? <button>+</button> : <button className='fake-button'>+</button>}
                         <span>{date.day}</span>
                       </span>
                       <div className='div-task'>
