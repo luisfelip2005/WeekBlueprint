@@ -13,16 +13,20 @@ export default function Main() {
     const week = []
 
     for (let i = 0; i < 7; i++) {
-      const d = new Date(sunday) 
+      let d = new Date(sunday) 
       d.setDate(sunday.getDate() + i)
-      week.push(d)
+      d = d.toString()
+
+      const dayOfWeek = d.slice(0,3);
+      const month = d.slice(4, 7)
+      const day = d.slice(8, 10)
+      const year = d.slice(11, 15)
+
+      week.push({day, dayOfWeek, month, year})
     }
 
     console.log(week)
   }, [])
-
-
-
 
   return (
     <section className='main-section'>
