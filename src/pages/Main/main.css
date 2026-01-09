@@ -107,3 +107,66 @@ body {
     text-align: start;
     display: flex;
 }
+
+.Modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    background-color: #202020;
+    width: 80%;
+    height: 70%;
+    border: 100px;
+    border: 2px solid #2F2F2F;
+    border-radius: 8px;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(17, 17, 17, 0.8);
+}
+
+.Modal section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Modal section .container {
+    width: 75%;
+}
+
+.form-add-task {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 0px 0px 0px;
+}
+
+.form-add-task input {
+    background-color: #202020;
+}
+
+.input-title {
+    font-size: 42px;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.form-add-task span {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-add-task span div {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
